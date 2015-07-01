@@ -63,3 +63,11 @@ Create `AddNote.js`
 create `SearchGithub.js`
 add the component `<SearchGithub />` to `Main.js`
 - [Navigation .transitionTo()](http://rackt.github.io/react-router/#Navigation)
+
+**Step.8 - Make server requests with Axios**
+[https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
+Promise based HTTP client for the browser and node.js
+```
+npm install --save axios
+```
+create `utils/helpers.js`
