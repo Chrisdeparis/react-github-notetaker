@@ -52,9 +52,14 @@ npm install --save reactfire firebase
 
 https://react-git-notetaker.firebaseio.com/
 
-**Step.6 - child components**
+**Step.6 - child components, add a new note function**
 
 -[.set()](https://www.firebase.com/docs/web/api/firebase/set.html)
 Create `handleAddNote` function in Profile component (parent), it is passed down to Notes component (child), and to Add Note component.
 Create `AddNote.js`
 
+**Step.7 - transition with react router**
+
+create `SearchGithub.js`
+add the component `<SearchGithub />` to `Main.js`
+- [Navigation .transitionTo()](http://rackt.github.io/react-router/#Navigation)
