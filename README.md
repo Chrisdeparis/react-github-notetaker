@@ -1,7 +1,7 @@
 ### Learning React.js - [Egghead.io](https://egghead.io)
 tayght by [Tyler McGinnis](https://egghead.io/instructors/tyler-mcginnis)
 
-**Step.1**
+**Step.1 - Set up webpack babel-loader first component**
 ```
 npm init
 npm install --save react
@@ -16,7 +16,12 @@ create first components `app/components/Main.js`
 webpack -w
 ```
 
-[Babel](https://babeljs.io/)
+**Step.2 - home component, router**
+create `Home.js`
+```
+npm install --save react-router
+```
+
 
 
 ### References
