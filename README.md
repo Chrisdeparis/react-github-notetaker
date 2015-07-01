@@ -94,10 +94,20 @@ Then, call init function when it needs to receive and render new data.
 
 Refactor `helpers.js`, `App.js`, `routes.js`
 
+Watch out for `{...state}`
+
 **Step.12 - Refactor in ES6/2015 for Notes components**
 
 Watch out for `this.handleSubmit` in `AddNote.js`, it needs to bind.
 
 **Step.13 - Refactor in ES6/2015 for UserProfile**
 
-**Step.14 - Refactor in ES6/2015 for 
+**Step.14 - Refactor in ES6/2015 for Home Main**
+
+from `App.js` `{...state}` to `Main.js` `{...this.props}`
+
+We cannot use mixins in ES6 classes. 
+Come up with another way for `mixins: [Router.Navigation]` to figure out routing.
+React-Router utilizes `context` in React. 
+React allows React-Router to pass function to child components.
+Use `contextTypes` to signal React to require `router` context from React-Router.
