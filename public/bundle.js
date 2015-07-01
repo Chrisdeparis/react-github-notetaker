@@ -23632,8 +23632,8 @@
 	var UserProfile = __webpack_require__(200);
 	var Repos = __webpack_require__(201);
 	var Notes = __webpack_require__(202);
-	var ReactFireMixin = __webpack_require__(203);
-	var Firebase = __webpack_require__(204);
+	var ReactFireMixin = __webpack_require__(205);
+	var Firebase = __webpack_require__(206);
 
 	var Profile = React.createClass({
 	  displayName: 'Profile',
@@ -23654,6 +23654,9 @@
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes');
 	  },
+	  handleAddNote: function handleAddNote(newNote) {
+	    this.ref.child(this.getParams().username).set(this.state.notes.concat([newNote]));
+	  },
 	  render: function render() {
 	    var username = this.getParams().username;
 	    return React.createElement(
@@ -23672,7 +23675,10 @@
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Notes, { username: username, notes: this.state.notes })
+	        React.createElement(Notes, {
+	          username: username,
+	          notes: this.state.notes,
+	          addNote: this.handleAddNote })
 	      )
 	    );
 	  }
@@ -23751,14 +23757,16 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var NotesList = __webpack_require__(205);
+	var NotesList = __webpack_require__(203);
+	var AddNote = __webpack_require__(204);
 
 	var Notes = React.createClass({
 	  displayName: 'Notes',
 
 	  propTypes: {
 	    username: React.PropTypes.string.isRequired,
-	    notes: React.PropTypes.array.isRequired
+	    notes: React.PropTypes.array.isRequired,
+	    addNote: React.PropTypes.func.isRequired
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -23770,6 +23778,7 @@
 	        'Notes for ',
 	        this.props.username
 	      ),
+	      React.createElement(AddNote, { username: this.props.username, addNote: this.props.addNote }),
 	      React.createElement(NotesList, { notes: this.props.notes })
 	    );
 	  }
@@ -23779,6 +23788,75 @@
 
 /***/ },
 /* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var NotesList = React.createClass({
+	  displayName: "NotesList",
+
+	  render: function render() {
+	    var notes = this.props.notes.map(function (note, index) {
+	      return React.createElement(
+	        "li",
+	        { className: "list-group-item", key: index },
+	        note
+	      );
+	    });
+	    return React.createElement(
+	      "ul",
+	      { className: "list-group" },
+	      notes
+	    );
+	  }
+	});
+
+	module.exports = NotesList;
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var AddNote = React.createClass({
+	  displayName: 'AddNote',
+
+	  propTypes: {
+	    username: React.PropTypes.string.isRequired,
+	    addNote: React.PropTypes.func.isRequired
+	  },
+	  handleSubmit: function handleSubmit() {
+	    var newNote = this.refs.note.getDOMNode().value;
+	    this.refs.note.getDOMNode().value = '';
+	    this.props.addNote(newNote);
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'input-group' },
+	      React.createElement('input', { type: 'text', className: 'form-control', ref: 'note', placeholder: 'Add a new note' }),
+	      React.createElement(
+	        'span',
+	        { className: 'input-group-btn' },
+	        React.createElement(
+	          'button',
+	          { className: 'btn btn-default', type: 'button', onClick: this.handleSubmit },
+	          'Submit'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = AddNote;
+
+/***/ },
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -23948,7 +24026,7 @@
 	}));
 
 /***/ },
-/* 204 */
+/* 206 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.2.7
@@ -24216,35 +24294,6 @@
 
 	module.exports = Firebase;
 
-
-/***/ },
-/* 205 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var React = __webpack_require__(1);
-
-	var NotesList = React.createClass({
-	  displayName: "NotesList",
-
-	  render: function render() {
-	    var notes = this.props.notes.map(function (note, index) {
-	      return React.createElement(
-	        "li",
-	        { className: "list-group-item", key: index },
-	        note
-	      );
-	    });
-	    return React.createElement(
-	      "ul",
-	      { className: "list-group" },
-	      notes
-	    );
-	  }
-	});
-
-	module.exports = NotesList;
 
 /***/ }
 /******/ ]);

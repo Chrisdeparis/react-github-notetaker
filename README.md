@@ -47,10 +47,14 @@ npm install --save reactfire firebase
 - [.bindAsArray()](https://www.firebase.com/docs/web/libraries/react/api.html#section-bindAsArray)
 - [.unbind()](https://www.firebase.com/docs/web/libraries/react/api.html#section-unbind)
 - [.child()](https://www.firebase.com/docs/web/api/firebase/child.html)
-
 - [componentDidMount](https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount)
 - [componentWillUnmount](https://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount)
 
 https://react-git-notetaker.firebaseio.com/
 
+**Step.6 - child components**
+
+-[.set()](https://www.firebase.com/docs/web/api/firebase/set.html)
+Create `handleAddNote` function in Profile component (parent), it is passed down to Notes component (child), and to Add Note component.
+Create `AddNote.js`
 
