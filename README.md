@@ -102,7 +102,7 @@ Watch out for `this.handleSubmit` in `AddNote.js`, it needs to bind.
 
 **Step.13 - Refactor in ES6/2015 for UserProfile**
 
-**Step.14 - Refactor in ES6/2015 for Home Main**
+**Step.14 - Refactor in ES6/2015 for Home Main SearchGithub**
 
 from `App.js` `{...state}` to `Main.js` `{...this.props}`
 
@@ -111,3 +111,15 @@ Come up with another way for `mixins: [Router.Navigation]` to figure out routing
 React-Router utilizes `context` in React. 
 React allows React-Router to pass function to child components.
 Use `contextTypes` to signal React to require `router` context from React-Router.
+
+**Step.15 - Pt.1 - Reactor in ES6/2015 for Profile**
+
+Remove ReactFire Firebase mixins and its references and React-Router since we cannot use it in ES6.
+Use `constructor()` instead of `getInitialState()`
+
+- [componentWillMount](https://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount)
+
+- [react-router Upgrade Guide](https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md)
+
+Use `contextTypes` as before for router and change `this.getParams()` to `this.router.getCurrentParams()`
+Change
