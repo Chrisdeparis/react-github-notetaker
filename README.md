@@ -64,7 +64,8 @@ create `SearchGithub.js`
 add the component `<SearchGithub />` to `Main.js`
 - [Navigation .transitionTo()](http://rackt.github.io/react-router/#Navigation)
 
-**Step.8 - Make server requests with Axios**<br />
+**Step.8 - Make server requests with Axios**
+
 [https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
 Promise based HTTP client for the browser and node.js
 ```
@@ -88,4 +89,9 @@ app does not listen to the route change event now.
 First,in `Profile.js` unbind from Firebase listener and then repeat the process in componentDidMount. However,
 to avoid duplicating the code, create `init` function and move the necessary code there.
 Then, call init function when it needs to receive and render new data.
+
+**Step.11 - Refactor in ES6/2015 for Non-components**
+
+Refactor `helpers.js`, `App.js`, `routes.js`, 
+
 
