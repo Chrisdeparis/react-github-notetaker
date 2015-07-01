@@ -38,3 +38,19 @@ create `config/routes.js` and `App.js` and edit `webpack.config.js`
 **Step.4 - propTypes**
 
 - [propTypes - props validation](https://facebook.github.io/react/docs/reusable-components.html#prop-validation)
+
+**Step.5 - firebase**
+```
+npm install --save reactfire firebase
+```
+- [reactfire](https://www.firebase.com/docs/web/libraries/react/?utm_source=reactfire)
+- [.bindAsArray()](https://www.firebase.com/docs/web/libraries/react/api.html#section-bindAsArray)
+- [.unbind()](https://www.firebase.com/docs/web/libraries/react/api.html#section-unbind)
+- [.child()](https://www.firebase.com/docs/web/api/firebase/child.html)
+
+- [componentDidMount](https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount)
+- [componentWillUnmount](https://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount)
+
+https://react-git-notetaker.firebaseio.com/
+
+
