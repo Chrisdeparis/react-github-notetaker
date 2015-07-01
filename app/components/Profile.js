@@ -8,9 +8,9 @@ var Profile = React.createClass({
   mixins: [Router.State],
   getInitialState: function(){
     return {
-      notes: ['llll'],
-      bio: ['hhhh'],
-      repos: ['ooo']
+      notes: ['notes1', 'notes2'],
+      bio: {name: 'this is bio'},
+      repos: ['repo1', 'repo2']
     }
   },
   render: function(){

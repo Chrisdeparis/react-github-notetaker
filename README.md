@@ -30,8 +30,11 @@ npm install --save react-router
 
 create `config/routes.js` and `App.js` and edit `webpack.config.js`
 
-**Step.3 - profile notes repos component **
+**Step.3 - profile notes repos component**
 - [mixins](https://facebook.github.io/react/docs/reusable-components.html#mixins)
 - [props vs state](https://facebook.github.io/react/docs/thinking-in-react.html#a-brief-interlude-props-vs-state)
 - [Does this go inside props or state?](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md#does-this-go-inside-props-or-state)
 
+**Step.4 - propTypes**
+
+- [propTypes - props validation](https://facebook.github.io/react/docs/reusable-components.html#prop-validation)
