@@ -122,4 +122,11 @@ Use `constructor()` instead of `getInitialState()`
 - [react-router Upgrade Guide](https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md)
 
 Use `contextTypes` as before for router and change `this.getParams()` to `this.router.getCurrentParams()`
-Change
+
+**Step.15 - Pt.2 - Reactor in ES6/2015 for Profile**
+
+```
+npm install --save re-base
+```
+Use [re-base](https://github.com/tylermcginnis/re-base)
+

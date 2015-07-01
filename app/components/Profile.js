@@ -3,6 +3,9 @@ import UserProfile from './Github/UserProfile';
 import Repos from './Github/Repos';
 import Notes from './Notes/Notes';
 import helpers from './utils/helpers';
+import Rebase from 're-base';
+
+var base = Rebase.createClass('https://react-git-notetaker.firebaseio.com/');
 
 class Profile extends React.Component{
   constructor(props){
@@ -15,14 +18,19 @@ class Profile extends React.Component{
   }
 
   init(){
+    this.ref = base.bindToState(this.router.getCurrentParams().username, {
+      context: this,
+      asArray: true,
+      state: 'notes'
+    });
 
     helpers.getGithubInfo(this.router.getCurrentParams().username)
-      .then(function(dataObj){
+      .then((dataObj) => {
         this.setState({
           bio: dataObj.bio,
           repos: dataObj.repos
         })
-      }.bind(this));
+      });
   }
 
   componentWillMount(){
@@ -34,15 +42,18 @@ class Profile extends React.Component{
   }
 
   componentWillUnmount(){
-
+    base.removeBinding(this.ref);
   }
 
   componentWillReceiveProps(){
+    base.removeBinding(this.ref);
     this.init();
   }
 
   handleAddNote(newNote){
-
+    base.post(this.router.getCurrentParams().username, {
+      data: this.state.notes.concat([newNote])
+    });
   }
 
   render(){
@@ -59,7 +70,7 @@ class Profile extends React.Component{
           <Notes 
             username={username} 
             notes={this.state.notes}
-            addNote={this.handleAddNote} />
+            addNote={this.handleAddNote.bind(this)} />
         </div>
       </div>
       )   
