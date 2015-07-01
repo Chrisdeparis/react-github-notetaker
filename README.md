@@ -71,3 +71,6 @@ Promise based HTTP client for the browser and node.js
 npm install --save axios
 ```
 create `utils/helpers.js`
+
+
+**Step.9 - Render Dynamic Data**
