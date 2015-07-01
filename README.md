@@ -92,6 +92,10 @@ Then, call init function when it needs to receive and render new data.
 
 **Step.11 - Refactor in ES6/2015 for Non-components**
 
-Refactor `helpers.js`, `App.js`, `routes.js`, 
+Refactor `helpers.js`, `App.js`, `routes.js`
+
+**Step.12 - Refactor in ES6/2015 for Notes components**
+
+Watch out for `this.handleSubmit` in `AddNote.js`, it needs to bind.
 
 
