@@ -8,6 +8,11 @@ npm install --save react
 npm install --save-dev babel-loader
 npm install webpack -g
 ```
+- [React](http://facebook.github.io/react/index.html)
+- [Babel](https://babeljs.io/)
+- [Babel-Loader](https://github.com/babel/babel-loader)
+- [Webpack](http://webpack.github.io/)
+
 create `index.html`
 create `webpack.config.js`
 create first components `app/components/Main.js`
@@ -16,17 +21,16 @@ create first components `app/components/Main.js`
 webpack -w
 ```
 
-**Step.2 - home component, router**
+**Step.2 - home component, react-router**
 create `Home.js`
 ```
 npm install --save react-router
 ```
+- [react-router](https://github.com/rackt/react-router)
+
+create `config/routes.js` and `App.js` and edit `webpack.config.js`
+
+**Step.3 - profile component **
+- [mixins](https://facebook.github.io/react/docs/reusable-components.html#mixins)
 
 
-
-### References
-
-- [React](http://facebook.github.io/react/index.html)
-- [Babel](https://babeljs.io/)
-- [Babel-Loader](https://github.com/babel/babel-loader)
-- [Webpack](http://webpack.github.io/)
