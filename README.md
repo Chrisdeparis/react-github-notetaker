@@ -98,4 +98,6 @@ Refactor `helpers.js`, `App.js`, `routes.js`
 
 Watch out for `this.handleSubmit` in `AddNote.js`, it needs to bind.
 
+**Step.13 - Refactor in ES6/2015 for UserProfile**
 
+**Step.14 - Refactor in ES6/2015 for 
