@@ -64,7 +64,7 @@ create `SearchGithub.js`
 add the component `<SearchGithub />` to `Main.js`
 - [Navigation .transitionTo()](http://rackt.github.io/react-router/#Navigation)
 
-**Step.8 - Make server requests with Axios**
+**Step.8 - Make server requests with Axios**<br />
 [https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
 Promise based HTTP client for the browser and node.js
 ```
@@ -74,3 +74,18 @@ create `utils/helpers.js`
 
 
 **Step.9 - Render Dynamic Data**
+
+- [Commit - UI rendering for repos](https://github.com/yhagio/react-github-notetaker/commit/c28b6cbb19d121d41fc2c083fec8ca5d329b8ca0)
+- [Commit - UI rendering for UserProfile](https://github.com/yhagio/react-github-notetaker/commit/bc4d8bf45ea37f55e8f1c73d18fd7e207c77033a)
+
+
+**Step.10 - **
+Fix for getting and rendering the new data on searching a new user, 
+app does not listen to the route change event now.
+
+- [componentWillReceiveProps](https://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops)
+
+First,in `Profile.js` unbind from Firebase listener and then repeat the process in componentDidMount. However,
+to avoid duplicating the code, create `init` function and move the necessary code there.
+Then, call init function when it needs to receive and render new data.
+
